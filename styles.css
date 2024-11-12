@@ -4,6 +4,8 @@
     font-family: sans-serif;
 }
 
+<<<<<<< HEAD
+=======
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -14,6 +16,7 @@
         transform: translateY(0);
     }
 }
+>>>>>>> a907514ca3bf0f42c20266c66587c542067dc93b
 
 
 
@@ -33,6 +36,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+<<<<<<< HEAD
+
+=======
+>>>>>>> a907514ca3bf0f42c20266c66587c542067dc93b
 } 
 
 .logo{
@@ -80,18 +87,22 @@
     transform: translateY(-50%);
     text-align: center;
     color: white;
-
+    
 }
 
 .content h1{
     font-size: 70px;
     margin-top: 80px;
+<<<<<<< HEAD
+    
+=======
     opacity: 0; /* Anfangszustand: unsichtbar */
     transform: translateY(20px); /* Anfangszustand: etwas nach unten verschoben */
     animation-duration: 2s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-name: fadeIn;
+>>>>>>> a907514ca3bf0f42c20266c66587c542067dc93b
 }
 
 
@@ -100,13 +111,21 @@
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
+<<<<<<< HEAD
+
+=======
     opacity: 0; /* Anfangszustand: unsichtbar */
     transform: translateY(20px); /* Anfangszustand: etwas nach unten verschoben */
     animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-name: fadeIn;
+<<<<<<< HEAD
     animation-delay: 2s;
+=======
+    animation-delay: 2.5s;
+>>>>>>> a907514ca3bf0f42c20266c66587c542067dc93b
+>>>>>>> e9791073620498a6eb1cf3b3987c3dcea0283232
 }
 
 button{
@@ -123,13 +142,21 @@ button{
     cursor: pointer;
     position: relative;
     overflow: hidden;
+<<<<<<< HEAD
+
+=======
     opacity: 0; /* Anfangszustand: unsichtbar */
     transform: translateY(20px); /* Anfangszustand: etwas nach unten verschoben */
     animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-name: fadeIn;
+<<<<<<< HEAD
     animation-delay: 2s;
+=======
+    animation-delay: 2.5s;
+>>>>>>> a907514ca3bf0f42c20266c66587c542067dc93b
+>>>>>>> e9791073620498a6eb1cf3b3987c3dcea0283232
 }
 
 span{
