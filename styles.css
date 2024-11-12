@@ -4,15 +4,18 @@
     font-family: sans-serif;
 }
 
-@keyframes siteOpen {
-    0% {
-        opacity: 0%;
-        transform: translate(translateY);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    100% {
-        opacity: 100%;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
+
+
 
 
 .banner{
@@ -30,8 +33,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    animation: siteOpen;
-    animation-duration: 2.5s;
 } 
 
 .logo{
@@ -85,16 +86,27 @@
 .content h1{
     font-size: 70px;
     margin-top: 80px;
-    animation: siteOpen;
-    animation-duration:3s;
+    opacity: 0; /* Anfangszustand: unsichtbar */
+    transform: translateY(20px); /* Anfangszustand: etwas nach unten verschoben */
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: fadeIn;
 }
+
+
 
 .content p{
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
-    animation: siteOpen, 5s;
-    animation-delay: 2s; 
+    opacity: 0; /* Anfangszustand: unsichtbar */
+    transform: translateY(20px); /* Anfangszustand: etwas nach unten verschoben */
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: fadeIn;
+    animation-delay: 2.5s;
 }
 
 button{
@@ -111,9 +123,13 @@ button{
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    animation: siteOpen;
-    animation-delay: 3s;
-    animation-duration: 4s;
+    opacity: 0; /* Anfangszustand: unsichtbar */
+    transform: translateY(20px); /* Anfangszustand: etwas nach unten verschoben */
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: fadeIn;
+    animation-delay: 2.5s;
 }
 
 span{
