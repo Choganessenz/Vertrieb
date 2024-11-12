@@ -4,15 +4,6 @@
     font-family: sans-serif;
 }
 
-@keyframes siteOpen {
-    0% {
-        opacity: 0%;
-        transform: translate(translateY);
-    }
-    100% {
-        opacity: 100%;
-    }
-}
 
 
 .banner{
@@ -30,8 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    animation: siteOpen;
-    animation-duration: 2.5s;
+
 } 
 
 .logo{
@@ -79,22 +69,20 @@
     transform: translateY(-50%);
     text-align: center;
     color: white;
-
+    
 }
 
 .content h1{
     font-size: 70px;
     margin-top: 80px;
-    animation: siteOpen;
-    animation-duration:3s;
+    
 }
 
 .content p{
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
-    animation: siteOpen, 5s;
-    animation-delay: 2s; 
+
 }
 
 button{
@@ -111,9 +99,7 @@ button{
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    animation: siteOpen;
-    animation-delay: 3s;
-    animation-duration: 4s;
+
 }
 
 span{
