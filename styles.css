@@ -106,7 +106,7 @@
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-name: fadeIn;
-    animation-delay: 2.5s;
+    animation-delay: 2s;
 }
 
 button{
@@ -129,7 +129,7 @@ button{
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-name: fadeIn;
-    animation-delay: 2.5s;
+    animation-delay: 2s;
 }
 
 span{
