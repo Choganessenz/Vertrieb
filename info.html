@@ -10,6 +10,11 @@
     <div class="banner">
         <div class="navbar">
             <img src="bilder/Chogan_Logo_w-300x183.png" class="logo">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="info.html">Info</a></li>
@@ -22,18 +27,36 @@
             <div class="container">
                 <div class="karte1">
                     <h2>Produkte</h2>
-                    <h3>Chogan´s Düfte sind von beliebten Parfümen inspiriert,                  <br> riechen gleich aber zu einem fairen Preis.</h3>
+                    <h3>Chogan´s Düfte sind von beliebten Parfümen inspiriert, riechen gleich aber zu einem fairen Preis.</h3>
                 </div>
                 <div class="karte2">
                     <h2>Bestellung</h2>
-                    <h3>Möchtest du eine Bestellung in Auftrag geben,                           <br> kontaktiere deine Kontaktperson.<br>Die Lieferzeit beträgt zwei Wochen.</h3>
+                    <h3>Möchtest du eine Bestellung in Auftrag geben, kontaktiere deine Kontaktperson. Die Lieferzeit beträgt zwei Wochen.</h3>
                 </div>
                 <div class="karte3">
                     <h2>Rechtliches</h2>
-                    <h3>Bei dieser Website handelt es sich lediglich um eine Vertriebwesite,    <br>die nichts mit der Offizielen Chogan Seite zu tun hat. <br> Die Bilder im Produktkatalog dienen nur der Veranschaulichung. <br> Parfüme werden mit den Chogan eigenen Flaschen ausgeliefert.</h3>
+                    <h3>Bei dieser Website handelt es sich lediglich um eine Vertriebwesite, die nichts mit der Offizielen Chogan Seite zu tun hat. Die Bilder im Produktkatalog dienen nur der Veranschaulichung. <br> Parfüme werden mit den Chogan eigenen Flaschen ausgeliefert.</h3>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        // Öffnet oder schließt das Menü, wenn auf den Hamburger-Button geklickt wird
+        function toggleMenu() {
+            const navMenu = document.querySelector('.navbar ul');
+            navMenu.classList.toggle('show'); // Fügt die Klasse "show" hinzu oder entfernt sie
+        }
+    
+        // Schließt das Menü, wenn außerhalb der Navbar geklickt wird
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.navbar ul');
+            const hamburgerButton = document.querySelector('.hamburger');
+    
+            // Überprüft, ob der Klick außerhalb des Menüs und des Hamburger-Buttons war
+            if (!navMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
+                navMenu.classList.remove('show'); // Entfernt die Klasse "show", um das Menü zu schließen
+            }
+        });
+    </script>
 </body>
 </html>

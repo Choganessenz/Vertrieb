@@ -36,7 +36,7 @@ body{
     overflow: hidden;
     box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2);
     margin: 60px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     opacity: 0; /* Unsichtbar am Anfang */
     transform: scale(0.8); /* Skalierung am Anfang */
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -144,4 +144,61 @@ body{
 
 .navbar ul li:hover::after{
     width: 100%;
+}
+
+.hamburger {
+    display: none; /* Versteckt auf größeren Bildschirmen */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+
+
+
+@media (max-width: 600px) {
+    .card{
+        width: 325px;
+        height: 550px;
+
+    }
+    .card-container{
+        margin: auto;
+        
+    }
+
+    .card-content h3{
+        font-size: 22px;
+    }
+
+    .navbar ul {
+        display: none; /* Versteckt das Menü standardmäßig */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Höhe der Navbar */
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 150px;
+        text-align: left;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .navbar ul.show {
+        display: flex; /* Zeigt das Menü an, wenn die Klasse "show" hinzugefügt wird */
+    }
+
+    .hamburger {
+        display: flex; /* Zeigt den Hamburger-Button an */
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Abstände zwischen den Menüpunkten im Dropdown */
+    }
 }

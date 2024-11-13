@@ -10,6 +10,11 @@
     <div class="banner">
         <div class="navbar">
             <img src="bilder/Chogan_Logo_w-300x183.png" class="logo">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="info.html">Info</a></li>
@@ -19,7 +24,7 @@
         </div>
         <div class="content">
             <h1>Finde deinen signature Duft</h1>
-            <p>Hochwertige Duftkreationen, inspiriert von ikonischen Parfums <br> Handgemacht in Italien mit den besten Zutaten</p>
+            <p>Hochwertige Duftkreationen, inspiriert von ikonischen Parfums <!-- <br> Handgemacht in Italien mit den besten Zutaten</p> -->
             <div>
                 <a href="produktkatalog.html">
                 <button type="button"><span></span> Zum Produktkatalog</button>
@@ -27,5 +32,23 @@
             </div>
         </div>
     </div>
+    <script>
+        // Öffnet oder schließt das Menü, wenn auf den Hamburger-Button geklickt wird
+        function toggleMenu() {
+            const navMenu = document.querySelector('.navbar ul');
+            navMenu.classList.toggle('show'); // Fügt die Klasse "show" hinzu oder entfernt sie
+        }
+    
+        // Schließt das Menü, wenn außerhalb der Navbar geklickt wird
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.navbar ul');
+            const hamburgerButton = document.querySelector('.hamburger');
+    
+            // Überprüft, ob der Klick außerhalb des Menüs und des Hamburger-Buttons war
+            if (!navMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
+                navMenu.classList.remove('show'); // Entfernt die Klasse "show", um das Menü zu schließen
+            }
+        });
+    </script>
 </body>
 </html>
