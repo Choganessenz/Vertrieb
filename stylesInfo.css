@@ -24,22 +24,50 @@
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,1)),url(bilder/pexels-valeriya-965731.jpg);
     background-size: cover;
     background-position: center;
+    
 }
 
-.navbar{
-    width: 85%;
+body{
+    
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,1)),url(bilder/pexels-valeriya-965731.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 100%;
     margin: auto;
     padding: 35px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-} 
+    position: fixed; /* Macht die Navigation fixiert */
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Stellt sicher, dass die Navigation über allen anderen Elementen bleibt */
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 1); /* Ändert den Hintergrund bei Scrollen */
+}
+
+.banner {
+    padding-top: 120px; /* Verhindert, dass Inhalte von der fixierten Navigation verdeckt werden */
+}
+
 
 .logo{
     width: 120px;
-    cursor: pointer;
+    margin-left: 7.5%;
 }
 
+.navbar ul{
+    margin-right: 7.5%;
+}
 
 .navbar ul li{
     
@@ -71,8 +99,8 @@
     width: 100%;
 }
 
-
 .hamburger {
+    margin-right: 7.5%;
     display: none; /* Versteckt auf größeren Bildschirmen */
     flex-direction: column;
     cursor: pointer;
