@@ -185,17 +185,16 @@ body{
     .card{
         width: 325px;
         height: 495px;
+        margin-left: 5%;
         margin-right: 5%;
-        margin-left:5%;
     }
 
     .card img{
-        height: 300px;
+        height: 338px;
 
     }
     .card-container{
-        margin: auto;
-        
+        margin:auto;
     }
 
     .card-content h3{
