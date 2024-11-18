@@ -79,7 +79,7 @@
     content: "";
     height: 3px;
     width: 0;
-    background: rgba(255, 0, 144, 0.5);
+    background: #957850;
     position: absolute;
     left: 0;
     bottom: -10px;
@@ -154,7 +154,7 @@ button{
     border-radius: 25px;
     font-weight: bold;
     font-size:medium;
-    border: 2px solid rgba(255, 0, 144, 0.5);
+    border: 2px solid #957850;
     background: transparent;
     color: white;
     cursor: pointer;
@@ -174,7 +174,7 @@ button{
 }
 
 span{
-    background: rgba(255, 0, 144, 0.5);
+    background: #957850;
     height: 100%;
     width: 0%;
     border-radius: 25px;
