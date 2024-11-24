@@ -107,7 +107,7 @@ body{
     position: absolute;
     display: inline-block;
     right: 16px;
-    bottom:16px;
+    bottom: 10px;
     margin-top: 16px;
     color: rgb(255, 255, 255);
 }
