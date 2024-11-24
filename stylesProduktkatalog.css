@@ -27,7 +27,7 @@ body{
     border: 2px solid transparent;
     border-radius: 25px;
     font-size: 16px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgb(76, 76, 76);
     color: white;
 }
 
@@ -222,6 +222,11 @@ body{
     .card-content h3{
         font-size: 22px;
     }
+
+    #searchBar {
+        width: 80%;
+    }
+
 
     .navbar ul {
         display: none; /* Versteckt das Menü standardmäßig */
