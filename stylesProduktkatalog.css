@@ -116,22 +116,20 @@ body{
 
 /* Hinzufügen von WebKit-spezifischen Regeln für Safari */
 .card {
-    -webkit-transform: translateZ(0); /* Vermeidung von Rendering-Problemen in Safari */
-    -webkit-backface-visibility: hidden; /* Vermeidung von Flimmern in Safari */
-    backface-visibility: hidden; /* Vermeidung von Flimmern in anderen Browsern */
+    transform: translateZ(0); /* Vermeidung von Rendering-Problemen */
+    backface-visibility: hidden; /* Vermeidung von Flimmern */
 }
 
 .card img {
-    -webkit-transform: translateZ(0); /* Vermeidung von Rendering-Problemen in Safari */
-    -webkit-backface-visibility: hidden; /* Vermeidung von Flimmern in Safari */
-    backface-visibility: hidden; /* Vermeidung von Flimmern in anderen Browsern */
+    transform: translateZ(0); /* Vermeidung von Rendering-Problemen */
+    backface-visibility: hidden; /* Vermeidung von Flimmern */
 }
 
 .card-content {
-    -webkit-transform: translateZ(0); /* Vermeidung von Rendering-Problemen in Safari */
-    -webkit-backface-visibility: hidden; /* Vermeidung von Flimmern in Safari */
-    backface-visibility: hidden; /* Vermeidung von Flimmern in anderen Browsern */
+    transform: translateZ(0); /* Vermeidung von Rendering-Problemen */
+    backface-visibility: hidden; /* Vermeidung von Flimmern */
 }
+
 
 
 
