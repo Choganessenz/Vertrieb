@@ -25,7 +25,7 @@
         <div class="search-container"> <input type="text" id="searchBar" onkeyup="searchProducts()" placeholder="Suche nach Marke, Name oder Duftrichtung..."> </div>
         <div class="card-container">
             <div class="card">
-                <img src="bilder/0011.webp">
+                <img src="bilder/001.webp">
                 <div class="card-content">
                     <h3>Paco Rabanne</h3>
                     <h4>One Million</h4>
@@ -1495,12 +1495,12 @@
             const navMenu = document.querySelector('.navbar ul');
             navMenu.classList.toggle('show'); // Fügt die Klasse "show" hinzu oder entfernt sie
         }
-
+    
         // Schließt das Menü, wenn außerhalb der Navbar geklickt wird
         document.addEventListener('click', function(event) {
             const navMenu = document.querySelector('.navbar ul');
             const hamburgerButton = document.querySelector('.hamburger');
-
+    
             // Überprüft, ob der Klick außerhalb des Menüs und des Hamburger-Buttons war
             if (!navMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
                 navMenu.classList.remove('show'); // Entfernt die Klasse "show", um das Menü zu schließen
@@ -1537,19 +1537,13 @@
                 txtValue += " " + (p.textContent || p.innerText);
                 txtValue += " " + (h6.textContent || h6.innerText);
                 if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                    cards[i].classList.remove("hidden");
+                    cards[i].style.display = "";
                 } else {
-                    cards[i].classList.add("hidden");
+                    cards[i].style.display = "none";
                 }
             }
         }
-    </script>
-    
-
-        
-        
-        
-        
-        
+        </script>
+           
 </body>
 </html>
