@@ -118,6 +118,7 @@ body{
 .card {
     transform: translateZ(0); /* Vermeidung von Rendering-Problemen */
     backface-visibility: hidden; /* Vermeidung von Flimmern */
+    transition: none !important; /* Übergänge deaktivieren */
 }
 
 .card img {
@@ -128,7 +129,9 @@ body{
 .card-content {
     transform: translateZ(0); /* Vermeidung von Rendering-Problemen */
     backface-visibility: hidden; /* Vermeidung von Flimmern */
+    transition: none !important; /* Übergänge deaktivieren */
 }
+
 
 
 

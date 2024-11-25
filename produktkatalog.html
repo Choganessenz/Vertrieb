@@ -32,7 +32,7 @@
                     <p>Süß-Holzig-Würzig</p>
                     <h5>35ml: 15.50€</h5>
                     <h5>100ml: 30€</h5>
-                    <h6>#001</h6>
+                    <h6>#0011</h6>
                 </div>
             </div>
             <div class="card">
@@ -1489,61 +1489,76 @@
         </div>
     </div>
     <script src="scroll.js"></script>
-    <script>
-        // Öffnet oder schließt das Menü, wenn auf den Hamburger-Button geklickt wird
-        function toggleMenu() {
-            const navMenu = document.querySelector('.navbar ul');
-            navMenu.classList.toggle('show'); // Fügt die Klasse "show" hinzu oder entfernt sie
+<script>
+    // Öffnet oder schließt das Menü, wenn auf den Hamburger-Button geklickt wird
+    function toggleMenu() {
+        const navMenu = document.querySelector('.navbar ul');
+        navMenu.classList.toggle('show'); // Fügt die Klasse "show" hinzu oder entfernt sie
+    }
+
+    // Schließt das Menü, wenn außerhalb der Navbar geklickt wird
+    document.addEventListener('click', function(event) {
+        const navMenu = document.querySelector('.navbar ul');
+        const hamburgerButton = document.querySelector('.hamburger');
+
+        // Überprüft, ob der Klick außerhalb des Menüs und des Hamburger-Buttons war
+        if (!navMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
+            navMenu.classList.remove('show'); // Entfernt die Klasse "show", um das Menü zu schließen
         }
-    
-        // Schließt das Menü, wenn außerhalb der Navbar geklickt wird
-        document.addEventListener('click', function(event) {
-            const navMenu = document.querySelector('.navbar ul');
-            const hamburgerButton = document.querySelector('.hamburger');
-    
-            // Überprüft, ob der Klick außerhalb des Menüs und des Hamburger-Buttons war
-            if (!navMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
-                navMenu.classList.remove('show'); // Entfernt die Klasse "show", um das Menü zu schließen
-            }
-        });
-    </script>
-    <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+    });
+</script>
+<script>
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+<script>
+    function searchProducts() {
+        // Deklariere Variablen
+        var input, filter, cards, cardContainer, h3, h4, p, h6, i, txtValue;
+        input = document.getElementById("searchBar");
+        filter = input.value.toLowerCase();
+        cardContainer = document.getElementsByClassName("card-container")[0];
+        cards = cardContainer.getElementsByClassName("card");
+
+        // Animationen deaktivieren
+        cardContainer.style.transition = 'none';
+        for (i = 0; i < cards.length; i++) {
+            cards[i].style.transition = 'none';
+        }
+
+        // Durchlaufe alle Karten und blende diejenigen aus, die nicht mit der Suche übereinstimmen
+        for (i = 0; i < cards.length; i++) {
+            h3 = cards[i].getElementsByTagName("h3")[0];
+            h4 = cards[i].getElementsByTagName("h4")[0];
+            p = cards[i].getElementsByTagName("p")[0];
+            h6 = cards[i].getElementsByTagName("h6")[0];
+            txtValue = h3.textContent || h3.innerText;
+            txtValue += " " + (h4.textContent || h4.innerText);
+            txtValue += " " + (p.textContent || p.innerText);
+            txtValue += " " + (h6.textContent || h6.innerText);
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
             } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
-    <script>
-        function searchProducts() {
-            // Deklariere Variablen
-            var input, filter, cards, cardContainer, h3, h4, p, h6, i, txtValue;
-            input = document.getElementById("searchBar");
-            filter = input.value.toLowerCase();
-            cardContainer = document.getElementsByClassName("card-container")[0];
-            cards = cardContainer.getElementsByClassName("card");
-        
-            // Durchlaufe alle Karten und blende diejenigen aus, die nicht mit der Suche übereinstimmen
-            for (i = 0; i < cards.length; i++) {
-                h3 = cards[i].getElementsByTagName("h3")[0];
-                h4 = cards[i].getElementsByTagName("h4")[0];
-                p = cards[i].getElementsByTagName("p")[0];
-                h6 = cards[i].getElementsByTagName("h6")[0];
-                txtValue = h3.textContent || h3.innerText;
-                txtValue += " " + (h4.textContent || h4.innerText);
-                txtValue += " " + (p.textContent || p.innerText);
-                txtValue += " " + (h6.textContent || h6.innerText);
-                if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
+                cards[i].style.display = "none";
             }
         }
-        </script>
+
+        // Animationen wieder aktivieren
+        setTimeout(function() {
+            cardContainer.style.transition = '';
+            for (i = 0; i < cards.length; i++) {
+                cards[i].style.transition = '';
+            }
+        }, 100);
+    }
+</script>
+
         
         
         
