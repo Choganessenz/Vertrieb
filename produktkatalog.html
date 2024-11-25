@@ -32,7 +32,7 @@
                     <p>Süß-Holzig-Würzig</p>
                     <h5>35ml: 15.50€</h5>
                     <h5>100ml: 30€</h5>
-                    <h6>#0011</h6>
+                    <h6>#001</h6>
                 </div>
             </div>
             <div class="card">
@@ -1525,13 +1525,7 @@
         filter = input.value.toLowerCase();
         cardContainer = document.getElementsByClassName("card-container")[0];
         cards = cardContainer.getElementsByClassName("card");
-
-        // Animationen deaktivieren
-        cardContainer.style.transition = 'none';
-        for (i = 0; i < cards.length; i++) {
-            cards[i].style.transition = 'none';
-        }
-
+    
         // Durchlaufe alle Karten und blende diejenigen aus, die nicht mit der Suche übereinstimmen
         for (i = 0; i < cards.length; i++) {
             h3 = cards[i].getElementsByTagName("h3")[0];
@@ -1543,21 +1537,14 @@
             txtValue += " " + (p.textContent || p.innerText);
             txtValue += " " + (h6.textContent || h6.innerText);
             if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                cards[i].style.display = "";
+                cards[i].classList.remove("hidden");
             } else {
-                cards[i].style.display = "none";
+                cards[i].classList.add("hidden");
             }
         }
-
-        // Animationen wieder aktivieren
-        setTimeout(function() {
-            cardContainer.style.transition = '';
-            for (i = 0; i < cards.length; i++) {
-                cards[i].style.transition = '';
-            }
-        }, 100);
     }
-</script>
+    </script>
+    
 
         
         

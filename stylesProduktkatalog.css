@@ -114,24 +114,17 @@ body{
 
 
 
-/* Hinzufügen von WebKit-spezifischen Regeln für Safari */
 .card {
-    transform: translateZ(0); /* Vermeidung von Rendering-Problemen */
-    backface-visibility: hidden; /* Vermeidung von Flimmern */
-    transition: none !important; /* Übergänge deaktivieren */
+    transform: scale(1);
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animation bleibt aktiv */
 }
 
-.card img {
-    transform: translateZ(0); /* Vermeidung von Rendering-Problemen */
-    backface-visibility: hidden; /* Vermeidung von Flimmern */
+.card.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
-.card-content {
-    transform: translateZ(0); /* Vermeidung von Rendering-Problemen */
-    backface-visibility: hidden; /* Vermeidung von Flimmern */
-    transition: none !important; /* Übergänge deaktivieren */
-}
-
 
 
 
