@@ -25,7 +25,7 @@
         <div class="search-container"> <input type="text" id="searchBar" onkeyup="searchProducts()" placeholder="Suche nach Marke, Name oder Duftrichtung..."> </div>
         <div class="card-container">
             <div class="card">
-                <img src="bilder/001.webp">
+                <img src="bilder/0011.webp">
                 <div class="card-content">
                     <h3>Paco Rabanne</h3>
                     <h4>One Million</h4>
@@ -1489,60 +1489,60 @@
         </div>
     </div>
     <script src="scroll.js"></script>
-<script>
-    // Öffnet oder schließt das Menü, wenn auf den Hamburger-Button geklickt wird
-    function toggleMenu() {
-        const navMenu = document.querySelector('.navbar ul');
-        navMenu.classList.toggle('show'); // Fügt die Klasse "show" hinzu oder entfernt sie
-    }
-
-    // Schließt das Menü, wenn außerhalb der Navbar geklickt wird
-    document.addEventListener('click', function(event) {
-        const navMenu = document.querySelector('.navbar ul');
-        const hamburgerButton = document.querySelector('.hamburger');
-
-        // Überprüft, ob der Klick außerhalb des Menüs und des Hamburger-Buttons war
-        if (!navMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
-            navMenu.classList.remove('show'); // Entfernt die Klasse "show", um das Menü zu schließen
+    <script>
+        // Öffnet oder schließt das Menü, wenn auf den Hamburger-Button geklickt wird
+        function toggleMenu() {
+            const navMenu = document.querySelector('.navbar ul');
+            navMenu.classList.toggle('show'); // Fügt die Klasse "show" hinzu oder entfernt sie
         }
-    });
-</script>
-<script>
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-</script>
-<script>
-    function searchProducts() {
-        // Deklariere Variablen
-        var input, filter, cards, cardContainer, h3, h4, p, h6, i, txtValue;
-        input = document.getElementById("searchBar");
-        filter = input.value.toLowerCase();
-        cardContainer = document.getElementsByClassName("card-container")[0];
-        cards = cardContainer.getElementsByClassName("card");
-    
-        // Durchlaufe alle Karten und blende diejenigen aus, die nicht mit der Suche übereinstimmen
-        for (i = 0; i < cards.length; i++) {
-            h3 = cards[i].getElementsByTagName("h3")[0];
-            h4 = cards[i].getElementsByTagName("h4")[0];
-            p = cards[i].getElementsByTagName("p")[0];
-            h6 = cards[i].getElementsByTagName("h6")[0];
-            txtValue = h3.textContent || h3.innerText;
-            txtValue += " " + (h4.textContent || h4.innerText);
-            txtValue += " " + (p.textContent || p.innerText);
-            txtValue += " " + (h6.textContent || h6.innerText);
-            if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                cards[i].classList.remove("hidden");
+
+        // Schließt das Menü, wenn außerhalb der Navbar geklickt wird
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.navbar ul');
+            const hamburgerButton = document.querySelector('.hamburger');
+
+            // Überprüft, ob der Klick außerhalb des Menüs und des Hamburger-Buttons war
+            if (!navMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
+                navMenu.classList.remove('show'); // Entfernt die Klasse "show", um das Menü zu schließen
+            }
+        });
+    </script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
             } else {
-                cards[i].classList.add("hidden");
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <script>
+        function searchProducts() {
+            // Deklariere Variablen
+            var input, filter, cards, cardContainer, h3, h4, p, h6, i, txtValue;
+            input = document.getElementById("searchBar");
+            filter = input.value.toLowerCase();
+            cardContainer = document.getElementsByClassName("card-container")[0];
+            cards = cardContainer.getElementsByClassName("card");
+        
+            // Durchlaufe alle Karten und blende diejenigen aus, die nicht mit der Suche übereinstimmen
+            for (i = 0; i < cards.length; i++) {
+                h3 = cards[i].getElementsByTagName("h3")[0];
+                h4 = cards[i].getElementsByTagName("h4")[0];
+                p = cards[i].getElementsByTagName("p")[0];
+                h6 = cards[i].getElementsByTagName("h6")[0];
+                txtValue = h3.textContent || h3.innerText;
+                txtValue += " " + (h4.textContent || h4.innerText);
+                txtValue += " " + (p.textContent || p.innerText);
+                txtValue += " " + (h6.textContent || h6.innerText);
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    cards[i].classList.remove("hidden");
+                } else {
+                    cards[i].classList.add("hidden");
+                }
             }
         }
-    }
     </script>
     
 
