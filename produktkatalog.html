@@ -1391,7 +1391,7 @@
     <script>
         function searchProducts() {
             // Deklariere Variablen
-            var input, filter, cards, cardContainer, h3, h4, p, i, txtValue;
+            var input, filter, cards, cardContainer, h3, h4, p, h6, i, txtValue;
             input = document.getElementById("searchBar");
             filter = input.value.toLowerCase();
             cardContainer = document.getElementsByClassName("card-container")[0];
@@ -1402,9 +1402,11 @@
                 h3 = cards[i].getElementsByTagName("h3")[0];
                 h4 = cards[i].getElementsByTagName("h4")[0];
                 p = cards[i].getElementsByTagName("p")[0];
+                h6 = cards[i].getElementsByTagName("h6")[0];
                 txtValue = h3.textContent || h3.innerText;
                 txtValue += " " + (h4.textContent || h4.innerText);
                 txtValue += " " + (p.textContent || p.innerText);
+                txtValue += " " + (h6.textContent || h6.innerText);
                 if (txtValue.toLowerCase().indexOf(filter) > -1) {
                     cards[i].style.display = "";
                 } else {
@@ -1413,6 +1415,7 @@
             }
         }
         </script>
+        
         
         
 </body>
