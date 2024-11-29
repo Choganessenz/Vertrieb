@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Scrollen initial verhindern
+    let allowScroll = false;
+
+    // Nach einer Sekunde das Scrollen erlauben
+    setTimeout(() => {
+        allowScroll = true;
+    }, 1000);
+
+    // Scrollen blockieren, falls noch nicht erlaubt
+    const blockScroll = (event) => {
+        if (!allowScroll) {
+            event.preventDefault();
+        }
+    };
+
+    // Scroll-Event-Listener hinzufügen
+    window.addEventListener('scroll', blockScroll, { passive: false });
+
     // Alle `.card`-Elemente auswählen
     const cards = document.querySelectorAll('.card');
 
@@ -12,9 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Wenn das Element sichtbar wird, füge die 'visible'-Klasse hinzu
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, 1000); // Warte eine Sekunde bevor die Animation startet
+                entry.target.classList.add('visible');
             } else {
                 // Wenn das Element nicht mehr sichtbar ist, entferne die 'visible'-Klasse
                 entry.target.classList.remove('visible');
