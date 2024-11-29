@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Wenn das Element sichtbar wird, füge die 'visible'-Klasse hinzu
-                entry.target.classList.add('visible');
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, 1000); // Warte eine Sekunde bevor die Animation startet
             } else {
                 // Wenn das Element nicht mehr sichtbar ist, entferne die 'visible'-Klasse
                 entry.target.classList.remove('visible');
