@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Optionen für den Intersection Observer
     const observerOptions = {
-        threshold: 0.2 // 40% des Elements müssen sichtbar sein, um die Animation zu starten
+        threshold: 0.2 // 20% des Elements müssen sichtbar sein, um die Animation zu starten
     };
 
     // Observer-Funktion erstellen
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Wenn das Element sichtbar wird, füge die 'visible'-Klasse hinzu
