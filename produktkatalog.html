@@ -22,7 +22,7 @@
                 <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </div>
-        <div class="search-container"> <input type="text" id="searchBar" onkeyup="searchProducts()" placeholder="Suche nach Marke, Name oder Duftrichtung..."> </div>
+        <div class="search-container"> <input type="text" id="searchBar" placeholder="Suche nach Marke, Name oder Duftrichtung..."> </div>
         <div class="card-container">
             <div class="card">
                 <img src="bilder/001.webp">
@@ -1518,6 +1518,12 @@
         });
     </script>
     <script>
+        document.getElementById("searchBar").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                searchProducts();
+            }
+        });
+
         function searchProducts() {
             // Deklariere Variablen
             var input, filter, cards, cardContainer, h3, h4, p, h6, i, txtValue;
@@ -1525,7 +1531,7 @@
             filter = input.value.toLowerCase();
             cardContainer = document.getElementsByClassName("card-container")[0];
             cards = cardContainer.getElementsByClassName("card");
-        
+
             // Durchlaufe alle Karten und blende diejenigen aus, die nicht mit der Suche übereinstimmen
             for (i = 0; i < cards.length; i++) {
                 h3 = cards[i].getElementsByTagName("h3")[0];
@@ -1543,7 +1549,8 @@
                 }
             }
         }
-        </script>
+
+    </script>
            
 </body>
 </html>
