@@ -1518,11 +1518,14 @@
         });
     </script>
     <script>
+        let debounceTimeout;
         document.getElementById("searchBar").addEventListener("keydown", function(event) {
             if (event.key === "Enter") {
-                searchProducts();
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(searchProducts, 300);
             }
         });
+
 
         function searchProducts() {
             // Deklariere Variablen
@@ -1543,12 +1546,17 @@
                 txtValue += " " + (p.textContent || p.innerText);
                 txtValue += " " + (h6.textContent || h6.innerText);
                 if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                    cards[i].style.display = "";
+                    if (cards[i].style.display === "none") {
+                        cards[i].style.display = "";
+                    }
                 } else {
-                    cards[i].style.display = "none";
+                    if (cards[i].style.display !== "none") {
+                        cards[i].style.display = "none";
+                    }
                 }
             }
         }
+
 
     </script>
            
