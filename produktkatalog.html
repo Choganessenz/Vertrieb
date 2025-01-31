@@ -22,7 +22,7 @@
                 <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </div>
-        <div class="search-container"> <input type="text" id="searchBar" onkeyup="searchProducts()" placeholder="Suche nach Marke, Name oder Duftrichtung..."> </div>
+        <div class="search-container"> <input type="text" id="searchBar" placeholder="Suche nach Marke, Name oder Duftrichtung..."> </div>
         <div class="card-container">
             <div class="card">
                 <img src="bilder/001.webp">
@@ -1518,6 +1518,15 @@
         });
     </script>
     <script>
+        let debounceTimeout;
+        document.getElementById("searchBar").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(searchProducts, 300);
+            }
+        });
+
+
         function searchProducts() {
             // Deklariere Variablen
             var input, filter, cards, cardContainer, h3, h4, p, h6, i, txtValue;
@@ -1525,7 +1534,7 @@
             filter = input.value.toLowerCase();
             cardContainer = document.getElementsByClassName("card-container")[0];
             cards = cardContainer.getElementsByClassName("card");
-        
+
             // Durchlaufe alle Karten und blende diejenigen aus, die nicht mit der Suche übereinstimmen
             for (i = 0; i < cards.length; i++) {
                 h3 = cards[i].getElementsByTagName("h3")[0];
@@ -1537,13 +1546,19 @@
                 txtValue += " " + (p.textContent || p.innerText);
                 txtValue += " " + (h6.textContent || h6.innerText);
                 if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                    cards[i].style.display = "";
+                    if (cards[i].style.display === "none") {
+                        cards[i].style.display = "";
+                    }
                 } else {
-                    cards[i].style.display = "none";
+                    if (cards[i].style.display !== "none") {
+                        cards[i].style.display = "none";
+                    }
                 }
             }
         }
-        </script>
+
+
+    </script>
            
 </body>
 </html>
